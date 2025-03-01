@@ -8,7 +8,7 @@ const cancelBtn = document.getElementById("cancelBtn");
 
 async function fetchAppointments() {
     try {
-        const response = await fetch("http://localhost:8080/api/appointments/admin/appointments");
+        const response = await fetch('${API_URL}/api/appointments/admin/appointments');
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -146,7 +146,7 @@ cancelBtn.addEventListener("click", async () => {
     if (!confirmation) return;
 
     try {
-        const response = await fetch(`http://localhost:8080/api/appointments/${selectedAppointment.id}/cancel`, {
+        const response = await fetch(`${API_URL}/appointments/${selectedAppointment.id}/cancel`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

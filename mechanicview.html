@@ -173,7 +173,7 @@
 
 		async function clockIn() {
 		    try {
-		        const response = await fetch(`http://localhost:8080/api/mechanics/${mechanicId}/clock-in`, {
+		        const response = await fetch(`${API_URL}/api/mechanics/${mechanicId}/clock-in`, {
 		            method: "POST"
 		        });
 		        if (!response.ok) throw new Error("Clock-in failed");
@@ -186,7 +186,7 @@
 		}
 		async function clockOut() {
 		    try {
-		        const response = await fetch(`http://localhost:8080/api/mechanics/${mechanicId}/clock-out`, {
+		        const response = await fetch(`${API_URL}/api/mechanics/${mechanicId}/clock-out`, {
 		            method: "POST"
 		        });
 		        if (!response.ok) throw new Error("Clock-out failed");
@@ -199,7 +199,7 @@
 		}
         async function updateServiceStatus(serviceId, newStatus) {
             try {
-                const response = await fetch(`http://localhost:8080/api/appointments/service-status`, {
+                const response = await fetch(`${API_URL}/api/appointments/service-status`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ serviceStatusNumber: serviceId, status: newStatus }),
@@ -219,7 +219,7 @@
 
 		async function fetchAppointments() {
 		        try {
-		            const response = await fetch(`http://localhost:8080/api/appointments/${mechanicId}`);
+		            const response = await fetch(`${API_URL}/api/appointments/${mechanicId}`);
 		            if (!response.ok) throw new Error("Failed to fetch appointments");
 
 		            const appointments = await response.json();

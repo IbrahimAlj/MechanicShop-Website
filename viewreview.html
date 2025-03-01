@@ -34,7 +34,7 @@
 
         async function loadReviews() {
             try {
-                const response = await fetch('http://localhost:8080/api/reviews');
+                const response = await fetch('${API_URL}/api/reviews');
                 if (!response.ok) throw new Error('Failed to load reviews.');
 
                 const reviews = await response.json();

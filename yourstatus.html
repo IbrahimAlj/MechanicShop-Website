@@ -189,7 +189,7 @@
   async function fetchServiceStatus(serviceId) {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/appointments/service-status/${serviceId}`,
+        `${API_URL}/api/appointments/service-status/${serviceId}`,
         { method: "GET", headers: { "Content-Type": "application/json" } }
       );
 

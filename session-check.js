@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             throw new Error("No session token found. Redirecting to login...");
         }
 
-        const response = await fetch("http://localhost:8080/api/users/validate-session", {
+        const response = await fetch("${API_URL}/api/users/validate-session", {
             method: "GET",
             headers: { Authorization: token },
         });

@@ -37,14 +37,14 @@
 
 		async function handleClaimAndRedirect(promotionId) {
 		    try {
-		        const response = await fetch(`http://localhost:8080/api/promotions/${promotionId}/claim`, {
+		        const response = await fetch(`${API_URL}/api/promotions/${promotionId}/claim`, {
 		            method: "POST",
 		            headers: { "Content-Type": "application/json" },
 		        });
 
 		        if (response.ok) {
 
-		            const countResponse = await fetch("http://localhost:8080/api/promotions/claimed-count");
+		            const countResponse = await fetch("${API_URL}/api/promotions/claimed-count");
 		            const countData = await countResponse.json();
 
 		            console.log("Updated Promotions Count:", countData.count);
@@ -66,7 +66,7 @@
         async function fetchPromotions() {
             const promotionsContainer = document.querySelector(".promotions-container");
             try {
-                const response = await fetch("http://localhost:8080/api/promotions");
+                const response = await fetch("${API_URL}/api/promotions");
                 if (!response.ok) throw new Error("Failed to fetch promotions");
 
                 const promotions = await response.json();

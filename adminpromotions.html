@@ -164,7 +164,7 @@
         async function fetchPromotions() {
             const promotionsContainer = document.getElementById("promotionsContainer");
             try {
-                const response = await fetch("http://localhost:8080/api/promotions");
+                const response = await fetch("${API_URL}/api/promotions");
                 const promotions = await response.json();
 
                 promotionsContainer.innerHTML = "";
@@ -190,7 +190,7 @@
 
         async function deletePromotion(id) {
             try {
-                const response = await fetch(`http://localhost:8080/api/promotions/${id}`, {
+                const response = await fetch(`${API_URL}/api/promotions/${id}`, {
                     method: "DELETE",
                 });
 
@@ -213,7 +213,7 @@
             const imageUrl = document.getElementById("promotionImage").value;
 
             try {
-                const response = await fetch("http://localhost:8080/api/promotions", {
+                const response = await fetch("${API_URL}/api/promotions", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ name, price, details, imageUrl }),
