@@ -16,7 +16,7 @@ public class Promotion {
     private String details;
     private String imageUrl;
     private int claimedCount = 0; 
-
+    private boolean claimed = false;
     public int getClaimedCount() {
         return claimedCount;
     }
