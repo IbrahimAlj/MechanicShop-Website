@@ -123,13 +123,15 @@
         }
     </style>
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app"
+    
         document.addEventListener("DOMContentLoaded", () => {
             const authToken = sessionStorage.getItem("adminToken");
             const logoutButton = document.getElementById("logoutButton");
             const addPromotionButton = document.getElementById("addPromotionButton");
             const modal = document.getElementById("modal");
             const closeModalButton = document.getElementById("closeModalButton");
-            const API_URL = "https://mechanicshop-website-production.up.railway.app"
 
             if (!authToken) {
                 alert("You must log in as an admin to access this page.");

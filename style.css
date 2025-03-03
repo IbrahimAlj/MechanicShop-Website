@@ -673,15 +673,40 @@ a {
       flex-direction: column;
     }
     .calendar-grid {
-      grid-template-columns: 50px repeat(7, 1fr);
-    }
-    .calendar-navigation {
-      flex-direction: column;
-      align-items: center;
-    }
-    .calendar-navigation button {
-      margin: 5px 0;
-    }
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  gap: 1px;
+  background-color: #ccc;
+}
+
+.time-slot {
+  background-color: #eee;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.day-header {
+  background-color: #ddd;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.day-column {
+  min-height: 50px;
+  background-color: #fff;
+}
+
+.day-column.empty {
+  /* Maybe a light border or background to make empty cells visible */
+  border: 1px solid #ccc;
+}
+
+.day-column.filled {
+  background-color: #ffc;
+}
+
   }
 
   /* General Mechanics Section Styles */
@@ -921,4 +946,19 @@ main {
     color: #007AFF; /* Change to your desired color */
     text-decoration: none;
 }
+
+.leave-review-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  z-index: 1000;
+}
+
 

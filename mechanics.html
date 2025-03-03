@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="media-queries.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app";
+    
         document.addEventListener("DOMContentLoaded", () => {
             const authToken = sessionStorage.getItem("authToken");
             const loginButton = document.getElementById("loginButton");
             const logoutButton = document.getElementById("logoutButton")
-			const API_URL = "https://mechanicshop-website-production.up.railway.app";
 
             
             if (authToken) {
@@ -108,6 +110,7 @@
                     <a href="services.html" class="nav_link">Services</a>
                     <a href="promotions.html" class="nav_link">Promotions</a>
                     <a href="servicestatus.html" class="nav_link">Service Status</a>
+                    <a href="viewreview.html" class="nav_link">Reviews</a>
                 </li>
             </ul>
             <div id="authButtons">

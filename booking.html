@@ -51,7 +51,8 @@
 
         try {
           const response = await fetch(
-            `http://localhost:8080/api/appointments/available-times?mechanicId=${mechanicId}&date=${date}`
+        		  `${API_URL}/api/appointments/available-times?mechanicId=${mechanicId}&date=${date}`
+
           );
           if (!response.ok) throw new Error("Failed to fetch available times");
 
@@ -164,15 +165,16 @@
   <body class="requires-auth">
     
     <header class="header">
-      <nav class="nav">
-        <a href="index.html" class="nav_logo">AutomobileAvengers</a>
-        <ul class="nav_items">
-          <li class="nav_item">
-            <a href="booking.html" class="nav_link">Booking</a>
-            <a href="mechanics.html" class="nav_link">Mechanics</a>
-            <a href="services.html" class="nav_link">Services</a>
-            <a href="promotions.html" class="nav_link">Promotions</a>
-            <a href="servicestatus.html" class="nav_link">Service Status</a>
+        <nav class="nav">
+            <a href="index.html" class="nav_logo">AutomobileAvengers</a>
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <a href="booking.html" class="nav_link">Booking</a>
+                    <a href="mechanics.html" class="nav_link">Mechanics</a>
+                    <a href="services.html" class="nav_link">Services</a>
+                    <a href="promotions.html" class="nav_link">Promotions</a>
+                    <a href="servicestatus.html" class="nav_link">Service Status</a>
+                    <a href="viewreview.html" class="nav_link">Reviews</a>
           </li>
         </ul>
         <div id="authButtons">
