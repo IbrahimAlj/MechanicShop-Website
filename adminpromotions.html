@@ -129,6 +129,7 @@
             const addPromotionButton = document.getElementById("addPromotionButton");
             const modal = document.getElementById("modal");
             const closeModalButton = document.getElementById("closeModalButton");
+            const API_URL = "https://mechanicshop-website-production.up.railway.app"
 
             if (!authToken) {
                 alert("You must log in as an admin to access this page.");
@@ -164,7 +165,7 @@
         async function fetchPromotions() {
             const promotionsContainer = document.getElementById("promotionsContainer");
             try {
-                const response = await fetch("${API_URL}/api/promotions");
+                const response = await fetch(`${API_URL}/api/promotions`);
                 const promotions = await response.json();
 
                 promotionsContainer.innerHTML = "";

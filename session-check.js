@@ -1,3 +1,5 @@
+
+const API_URL = "https://mechanicshop-website-production.up.railway.app";
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         const token = sessionStorage.getItem("authToken"); 
@@ -6,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             throw new Error("No session token found. Redirecting to login...");
         }
 
-        const response = await fetch("${API_URL}/api/users/validate-session", {
+        const response = await fetch(`${API_URL}/api/users/validate-session`, {
             method: "GET",
             headers: { Authorization: token },
         });

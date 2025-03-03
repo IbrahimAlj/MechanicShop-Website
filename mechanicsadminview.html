@@ -95,6 +95,9 @@
         }
     </style>
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app";
+    
         document.addEventListener("DOMContentLoaded", () => {
             const adminToken = sessionStorage.getItem("adminToken");
 
@@ -131,7 +134,7 @@
                 };
 
                 try {
-                    const response = await fetch("${API_URL}/api/mechanics", {
+                    const response = await fetch(`${API_URL}/api/mechanics`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -154,7 +157,7 @@
 
         async function fetchMechanics() {
             try {
-                const response = await fetch("${API_URL}/api/mechanics");
+                const response = await fetch(`${API_URL}/api/mechanics`);
                 const mechanics = await response.json();
                 const tableBody = document.getElementById("mechanics-table");
 

@@ -5,10 +5,11 @@ let selectedAppointment = null;
 const calendarGrid = document.getElementById("calendarGrid");
 const detailsContent = document.getElementById("detailsContent");
 const cancelBtn = document.getElementById("cancelBtn");
+const API_URL = "https://mechanicshop-website-production.up.railway.app"
 
 async function fetchAppointments() {
     try {
-        const response = await fetch('${API_URL}/api/appointments/admin/appointments');
+        const response = await fetch(`${API_URL}/api/appointments/admin/appointments`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

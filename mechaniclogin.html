@@ -29,6 +29,9 @@
     </section>
 
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app";
+    
         document.addEventListener("DOMContentLoaded", () => {
             const mechanicLoginForm = document.getElementById("mechanicLoginForm");
 
@@ -44,7 +47,7 @@
                 }
 
                 try {
-                    const response = await fetch("${API_URL}/api/mechanics/login", {
+                    const response = await fetch(`${API_URL}/api/mechanics/login`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ username, password }),

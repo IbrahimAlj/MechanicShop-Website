@@ -6,6 +6,9 @@
     <title>Create Account | Automobile Avengers</title>
     <link rel="stylesheet" href="style.css">
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app"
+    
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("createAccountForm").addEventListener("submit", async (e) => {
                 e.preventDefault();
@@ -16,7 +19,7 @@
                 const password = document.getElementById("password").value;
 
                 try {
-                    const response = await fetch("http://localhost:8080/api/users", {
+                    const response = await fetch(`${API_URL}/api/users`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ firstName, lastName, email, password }),

@@ -6,6 +6,9 @@
     <title>View Reviews | Automobile Avengers</title>
     <link rel="stylesheet" href="style.css">
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app";
+    	
         document.addEventListener("DOMContentLoaded", () => {
             const authToken = sessionStorage.getItem("authToken");
             const loginButton = document.getElementById("loginButton");
@@ -34,7 +37,7 @@
 
         async function loadReviews() {
             try {
-                const response = await fetch('${API_URL}/api/reviews');
+                const response = await fetch(`${API_URL}/api/reviews`);
                 if (!response.ok) throw new Error('Failed to load reviews.');
 
                 const reviews = await response.json();

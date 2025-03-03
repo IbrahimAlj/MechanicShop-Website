@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media-queries.css">
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app";
+    
         document.addEventListener("DOMContentLoaded", async () => {
             const adminToken = sessionStorage.getItem("adminToken");
 
@@ -39,7 +42,7 @@
 
         async function fetchAppointmentsCount() {
             try {
-                const response = await fetch("${API_URL}/api/appointments/admin/appointments");
+                const response = await fetch(`${API_URL}/api/appointments/admin/appointments`);
                 if (!response.ok) throw new Error("Failed to fetch appointments count");
                 const data = await response.json();
                 return data.count || 0;
@@ -51,7 +54,7 @@
 
 		async function fetchPromotionsCount() {
 		    try {
-		        const response = await fetch("${API_URL}/api/promotions/claimed-count");
+		        const response = await fetch(`${API_URL}/api/promotions/claimed-count`);
 		        if (!response.ok) throw new Error("Failed to fetch promotions count");
 		        const data = await response.json();
 		        return data.count || 0;

@@ -52,6 +52,9 @@
     </main>
 
     <script>
+    
+    	const API_URL = "https://mechanicshop-website-production.up.railway.app";
+    
         document.getElementById('reviewForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -60,7 +63,7 @@
                 comment: document.getElementById('comment').value
             };
 
-            const response = await fetch('${API_URL}/api/reviews', {
+            const response = await fetch(`${API_URL}/api/reviews`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(review)
